@@ -1,0 +1,27 @@
+package com.example.Trello.Model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long Id;
+
+    private String userName;
+    private String password;
+    private String mailId;
+
+    public User(String userName,String password,String mailId) {
+        this.userName = userName;
+        this.password = password;
+        this.mailId = mailId;
+    }
+}
