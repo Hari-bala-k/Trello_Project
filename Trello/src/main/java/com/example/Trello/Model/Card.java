@@ -15,10 +15,10 @@ import lombok.NoArgsConstructor;
 public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     private String title;
     private String description;
-    private  long listId;
+    private  Long listId;
     private int position;
 }
