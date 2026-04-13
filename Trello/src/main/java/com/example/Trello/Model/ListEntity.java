@@ -15,9 +15,9 @@ import lombok.NoArgsConstructor;
 public class ListEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long Id;
+    private Long id;
 
     private String title;
-    private long boardId;
+    private Long boardId;
     private int position;
 }
