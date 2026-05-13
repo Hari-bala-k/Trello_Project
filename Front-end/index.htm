@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trello Clone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <nav class="topbar">
+      <div class="brand">
+        <div class="brand-mark">TC</div>
+        <div>
+          <h1>Trello Clone</h1>
+          <p>Task boards powered by your backend API</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button id="themeToggle" class="btn btn-ghost" aria-label="Toggle dark light theme">Toggle theme</button>
+        <button id="openBoardModal" class="btn btn-primary">New Board</button>
+      </div>
+    </nav>
+
+    <main class="workspace">
+      <section class="dashboard-view" id="dashboardView">
+        <header class="section-head">
+          <div>
+            <h2>Boards</h2>
+            <p>Organize your projects into cards, lists, and boards.</p>
+          </div>
+          <button id="openBoardModalTop" class="btn btn-secondary">Create Board</button>
+        </header>
+
+        <div id="boardsGrid" class="boards-grid"></div>
+        <div id="emptyBoards" class="empty-state hidden">
+          <div class="empty-icon">📌</div>
+          <h3>No boards yet</h3>
+          <p>Create a board to start planning your workflow.</p>
+          <button id="openBoardModalEmpty" class="btn btn-primary">Create your first board</button>
+        </div>
+      </section>
+
+      <section class="board-detail-view hidden" id="boardDetailView">
+        <div class="board-header">
+          <button id="backToDashboard" class="btn btn-ghost">← Back</button>
+          <div>
+            <h2 id="boardTitle">Board</h2>
+            <p id="boardSubtitle">Your lists are ready to organize</p>
+          </div>
+          <button id="openListModal" class="btn btn-primary">New List</button>
+        </div>
+
+        <div class="lists-scroll" id="listsContainer"></div>
+        <div id="emptyLists" class="empty-state hidden">
+          <div class="empty-icon">✨</div>
+          <h3>No lists in this board</h3>
+          <p>Add a new list to start building your board.</p>
+          <button id="openListModalEmpty" class="btn btn-primary">Add a list</button>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal-overlay hidden" id="modalOverlay"></div>
+
+    <dialog id="boardModal" class="modal" aria-modal="true">
+      <form id="boardForm" class="modal-card" method="dialog">
+        <h3>Create Board</h3>
+        <p>Give your board a name to keep your workflow organized.</p>
+        <label>
+          Board name
+          <input type="text" id="boardNameInput" placeholder="e.g. Product Launch" required />
+        </label>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="listModal" class="modal" aria-modal="true">
+      <form id="listForm" class="modal-card" method="dialog">
+        <h3>Add List</h3>
+        <p>Create a column to organize cards inside this board.</p>
+        <label>
+          List title
+          <input type="text" id="listNameInput" placeholder="e.g. Design" required />
+        </label>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <div class="spinner-overlay hidden" id="spinnerOverlay">
+      <div class="spinner"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
