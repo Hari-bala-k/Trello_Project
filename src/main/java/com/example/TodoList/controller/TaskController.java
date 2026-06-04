@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
-//@RequestMapping("/tasks")
+@RequestMapping("/tasks")
 public class TaskController {
 
     private final TaskServices taskServices;
@@ -31,7 +31,7 @@ public class TaskController {
      model.addAttribute("tasks",tasks);
      return"tasks";
     }
-     @PostMapping
+     @PostMapping("/create")
      public String creatTask(@RequestParam String title){
         taskServices.creatTask(title);
         return "redirect:/";
