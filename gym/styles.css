@@ -1,0 +1,81 @@
+/* Google Font & General Styling */
+body {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    background-color: #060606;
+    color: rgb(249, 245, 245);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(135deg, rgb(248, 10, 10), #ed931d);
+    padding: 20px;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 8px rgba(255, 0, 0, 0.5);
+}
+
+h2 {
+    margin-top: 30px;
+    color: #ffcc00;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Table Styling */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+th, td {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+}
+
+th {
+    background-color: rgba(255, 0, 0, 0.8);
+    color: #fff;
+    text-transform: uppercase;
+}
+
+td {
+    transition: background 0.3s;
+}
+
+td:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover Effect */
+table:hover {
+    transform: scale(1.02);
+}
